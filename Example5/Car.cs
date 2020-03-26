@@ -11,6 +11,7 @@ namespace WpfBindingExample
         private string _model;
         private int _maxSpeed;
         private decimal _price;
+        private string _imagePath;
         public string Model
         {
             get { return _model; }
@@ -39,6 +40,15 @@ namespace WpfBindingExample
             {
                 _price = value;
                 OnPropertyChanged("Price");
+            }
+        }
+        public string ImagePath
+        {
+            get { return _imagePath; }
+            set
+            {
+                _imagePath = value;
+                OnPropertyChanged("ImagePath");
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;

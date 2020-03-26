@@ -25,9 +25,9 @@ namespace WpfBindingExample
         {
             Cars = new ObservableCollection<Car>
             {
-                new Car { Model="ВАЗ-2105", MaxSpeed=150, Price=56000 },
-                new Car { Model="LADA Priora", MaxSpeed=170, Price=560000 },
-                new Car { Model="КамАЗ", MaxSpeed=100, Price=5600000 }
+                new Car { Model="ВАЗ-2105", MaxSpeed=150, Price=56000, ImagePath="/Images/lada_2105.jpg" },
+                new Car { Model="LADA Priora", MaxSpeed=170, Price=560000, ImagePath="/Images/Lada-Priora.jpg" },
+                new Car { Model="КамАЗ", MaxSpeed=100, Price=5600000, ImagePath="/Images/kamaz.jpg" }
             };
         }
         public void AddCar()
