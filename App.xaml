@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WpfBindingExample"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-             StartupUri="Example5\Example5Window.xaml">
+             StartupUri="Example3Window.xaml">
     <Application.Resources>
         <sys:Double x:Key="BaseFontSize">19</sys:Double>
         <ValueSource x:Key="BigFont"  />

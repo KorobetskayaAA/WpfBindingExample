@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBindingExample"
         mc:Ignorable="d"
-        Title="Example3Window" Height="Auto" Width="300">
+        Title="Example3Window" Height="Auto" Width="400">
     <Window.Resources>
         <local:YesNoToBooleanConverter x:Key="YesNoToBooleanConverter" />
         <local:BoldToBooleanConverter x:Key="BoldToBooleanConverter" />
         <local:RainbowConverter x:Key="RainbowConverter" />
+        <local:FarenheitToCelciusConverter x:Key="FarenheitToCelciusConverter"/>
     </Window.Resources>
-    <StackPanel>
+    <StackPanel Margin="5">
         <WrapPanel>
+            <TextBlock VerticalAlignment="Center" Margin="5">Да или нет?</TextBlock>
             <TextBox x:Name="YesNoText" Width="32pt" Margin="5" />
             <CheckBox IsChecked="{Binding Text, ElementName=YesNoText, 
                                           Converter={StaticResource YesNoToBooleanConverter}}"
@@ -42,6 +44,15 @@
                 </Rectangle.Fill>
             </Rectangle>
         </UniformGrid>
-
+        <UniformGrid Columns="2" Rows="2">
+            <Label>Градусы Цельсия</Label>
+            <Label>Градусы Френгейта</Label>
+            <TextBox x:Name="CelsiusText" Text="{Binding Text, 
+                ElementName=FerenheitText,
+                UpdateSourceTrigger=PropertyChanged,
+                StringFormat=0.##,
+                Converter={StaticResource FarenheitToCelciusConverter}}"/>
+            <TextBox x:Name="FerenheitText" Text="-40"/>
+        </UniformGrid>
     </StackPanel>
 </Window>
